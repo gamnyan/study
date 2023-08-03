@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>계산기 JSP</title>
+<script>
+	function signUp(i) {
+		document.getElementById("display").value += i;
+	}
+</script>
+</head>
+<body>
+	<h2>계산기 JSP</h2>
+	<hr>
+	<form method="post" action="./calc.jsp">
+		<input type="text" id="display" name ="d" value="" size="20" readonly><br>
+		<input type="button" name="n1" value="7" onclick="signUp(7)">
+		<input type="button" name="n1" value="8" onclick="signUp(8)">
+		<input type="button" name="n1" value="9" onclick="signUp(9)">
+		<input type="button" name="op" value="/" onclick="signUp('/')"><br>
+		<input type="button" name="n1" value="4" onclick="signUp(4)">
+		<input type="button" name="n1" value="5" onclick="signUp(5)">
+		<input type="button" name="n1" value="6" onclick="signUp(6)">
+		<input type="button" name="op" value="*" onclick="signUp('*')"><br>
+		<input type="button" name="n1" value="1" onclick="signUp('1')">
+		<input type="button" name="n1" value="2" onclick="signUp('2')">
+		<input type="button" name="n1" value="3" onclick="signUp('3')">
+		<input type="button" name="op" value="-" onclick="signUp('-')"><br>
+		<input type="button" name="n1" value="0" onclick="signUp('0')">
+		<input type="button" name="C" value="C"
+			onclick="document.getElementById('display').value = ''"> <input
+			type="submit" name="=" value="="> <input type="button"
+			name="op" value="+" onclick="signUp('+')">
+		<!-- <input type="text" name="n1" size="10"><select name="op">
+			<option>+</option>
+			<option>-</option>
+			<option>*</option>
+			<option>/</option>
+			<option>%</option>
+		</select><input type="text" name="n2" size="10"> <input type="submit"
+			value="실행"> -->
+	</form>
+</body>
+</html>

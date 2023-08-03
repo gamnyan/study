@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>canRideRollerCoaster</title>
+</head>
+<body>
+	<h2>탑승 승객 정보</h2>
+	<hr>
+	<div style="text-align:center">
+	<form method="post" action="/jwbook/canRRC">
+		나이:
+		<input type="text" name="age" size="20">
+		<td>키:</td>
+		<input type="text" name="height" size="20">
+		<td>
+			부모동반여부<input type="checkbox" name="parent">
+		</td>
+		<td>심장병</td>
+		유<input type="radio" name="heartDisease" value="1" style="width:18px;height:13px;border:18px;"> 무<input
+			type="radio" name="heartDisease" value="2" style="width:18px;height:13px;border:18px;" checked>
+		<hr>
+		<input type="submit" value="실행">
+	</form>
+	</div>
+</body>
+</html>
