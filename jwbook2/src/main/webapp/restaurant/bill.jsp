@@ -29,6 +29,15 @@
         <br />
 
         <div class="container">
+            <h6>고객</h6>
+            <c:forEach var="customer" items="${customerList}">
+                <button class="button customer" data-customer-id="${customer.id}" data-customer-name="${customer.name}">
+                        ${customer.name}
+                </button>
+            </c:forEach>
+        </div>
+        <br />
+        <div class="container">
             <h6>메뉴</h6>
             <c:forEach var="menu" items="${menuList}">
                 <button class="button menu" data-menu-id="${menu.id}" data-menu-name="${menu.name}" data-menu-price="${menu.price}">

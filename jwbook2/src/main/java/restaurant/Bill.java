@@ -10,6 +10,7 @@ public class Bill {
     private Date billDate;
     private Long cardId;
     private Long couponId;
+    private int customerId;
     private LineItem[] lineItems;
 
     public Bill() {
@@ -64,7 +65,15 @@ public class Bill {
         this.billDate = billDate;
     }
 
-    public LineItem[] getLineItems() {
+    public int getCustomerId() {
+		return customerId;
+	}
+
+	public void setCustomerId(int customerId) {
+		this.customerId = customerId;
+	}
+
+	public LineItem[] getLineItems() {
         return lineItems;
     }
 

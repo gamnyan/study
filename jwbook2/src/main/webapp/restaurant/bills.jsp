@@ -31,6 +31,7 @@
         <div class="container">
             <label>결제</label>
             <br />
+            <input type="date" onclick="dateSearch()">
             <table class="table" data-role="table" id="bills_table"
                    data-rows="-1"
                    data-show-pagination="false" data-show-search="false" data-show-rows-steps="false" data-show-table-info="false"

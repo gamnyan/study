@@ -2,6 +2,7 @@ package restaurant;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -14,6 +15,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.beanutils.BeanUtils;
+import org.apache.commons.beanutils.ConvertUtils;
+import org.apache.commons.beanutils.converters.DateConverter;
 import org.apache.commons.lang3.StringUtils;
 
 import fei1rain.util.BeanUtilsUtil;
@@ -28,8 +31,12 @@ public class RestaurantServlet extends HttpServlet {
     @Override
     public void init() throws ServletException {
         super.init();
-
         restaurantService = new RestaurantService();
+        
+        // 날짜추가위한코드
+        DateConverter dc = new DateConverter();
+        dc.setPattern("yyyy-MM-dd");
+        ConvertUtils.register(dc, Date.class);
     }
 
     @Override
@@ -68,6 +75,7 @@ public class RestaurantServlet extends HttpServlet {
 
     private String bill(HttpServletRequest request, HttpServletResponse response) {
         List<Menu> menuList = restaurantService.getMenus();
+        List<Customer> customerList = restaurantService.getCustomers();
         /*
         List<Card> creditCardList = restaurantService.getCardsCredit();
         List<Card> telecomCardList = restaurantService.getCardsTelecom();
@@ -79,6 +87,7 @@ public class RestaurantServlet extends HttpServlet {
         List<Card> okcashbagCardList = restaurantService.getCardsByType("OKCASHBAG");
         List<Card> pointCardList = restaurantService.getCardsByType("POINT");
         List<Coupon> couponList = restaurantService.getCoupons();
+        request.setAttribute("customerList", customerList);
         request.setAttribute("menuList", menuList);
         request.setAttribute("creditCardList", creditCardList);
         request.setAttribute("telecomCardList", telecomCardList);

@@ -13,6 +13,14 @@ public class RestaurantService {
     public RestaurantService() {
         restaurantDao = new RestaurantDAO();
     }
+    
+    public List<Customer> getCustomers() {
+        List<Customer> rtn = new ArrayList<>();
+
+        rtn = restaurantDao.getCustomers();
+
+        return rtn;
+    }
 
     public List<Menu> getMenus() {
         List<Menu> rtn = new ArrayList<>();
