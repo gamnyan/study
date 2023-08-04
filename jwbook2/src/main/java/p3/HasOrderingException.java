@@ -1,5 +1,6 @@
-package p;
+package p3;
 
+@SuppressWarnings("serial")
 public class HasOrderingException extends Exception {
 	public HasOrderingException() {
 	}

@@ -6,13 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
-	integrity="sha256-2TnSHycBDAm2wpZmgdi0z81kykGPJAkiUY+Wf97RbvY="
-	crossorigin="anonymous">
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
 <script
-	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
-	integrity="sha256-gOQJIa9+K/XdfAuBkg2ONAdw5EnQbokw/s2b8BqsRFg="
-	crossorigin="anonymous"></script>
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"></script>
 <title>뉴스 관리 앱</title>
 </head>
 <body>
@@ -27,7 +23,7 @@
 			</div>
 		</div>
 		<hr>
-		<a href="javascript:history.back()" class="btn btn-primary"> <<	Back </a>
+		<a href="javascript:history.back()" class="btn btn-primary"> Back </a>
 	</div>
 </body>
 </html>

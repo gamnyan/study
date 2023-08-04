@@ -17,6 +17,7 @@ public class Card {
 	private int discount;
 	private String discountType;
 	
+	@SuppressWarnings("unchecked")
 	public String cardJsonArrayString() {
     	String rtn = null;
     	

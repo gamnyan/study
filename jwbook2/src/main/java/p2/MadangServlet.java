@@ -1,4 +1,4 @@
-package p;
+package p2;
 
 import java.io.IOException;
 import java.io.PrintWriter;

@@ -1,4 +1,4 @@
-package p;
+package p2;
 
 import java.sql.*;
 import java.util.*;

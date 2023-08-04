@@ -8,7 +8,7 @@ CREATE TABLE ordering(
 )
 */
 
-package p;
+package p2;
 
 import java.util.Date;
 

@@ -45,7 +45,7 @@ if (goal != null) {
 </head>
 <body>
 	<form method="get">
-		<table border="1" size="100">
+		<table border="1">
 			<%
 			for (int i = 0; i < 3; i++) {
 			%>

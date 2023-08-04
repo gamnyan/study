@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import org.apache.commons.beanutils.BeanUtils;
 
+@SuppressWarnings("serial")
 @WebServlet(name = "Madang", urlPatterns = { "/madang" })
 public class MadangServlet extends HttpServlet {
 

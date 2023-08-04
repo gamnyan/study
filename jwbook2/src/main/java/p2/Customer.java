@@ -7,7 +7,7 @@ CREATE TABLE customer(
 )
 */
 
-package p;
+package p2;
 
 import java.util.List;
 
@@ -20,7 +20,8 @@ public class Customer {
     String phone;
     List<Ordering> orderings;
     
-    public String toJsonString() {
+    @SuppressWarnings("unchecked")
+	public String toJsonString() {
     	String rtn = null;
     	
     	JSONObject jo = new JSONObject();

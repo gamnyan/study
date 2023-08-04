@@ -21,10 +21,11 @@ import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
 
 public class RestaurantDAO {
-	protected DataSource dataSource;
-
 	final static String QUERY_PATH = "/restaurant/restaurant_sql.properties";
 	final static Map<String, String> QM;
+	
+	private DataSource dataSource;
+
 	static {
 		try {
 			QM = QueryLoader.instance().load(QUERY_PATH);
@@ -34,8 +35,10 @@ public class RestaurantDAO {
 		}
 	}
 
+	// 공식으로 보면 된다.
 	public RestaurantDAO() {
 		try {
+			// 톰캣 설명서 따라서
 			Context initialContext = new InitialContext();
 			Context envContext = (Context) initialContext.lookup("java:/comp/env");
 			dataSource = (DataSource) envContext.lookup("jdbc/jwbookdb");

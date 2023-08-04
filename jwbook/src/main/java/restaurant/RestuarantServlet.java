@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.lang3.StringUtils;
 
-@WebServlet(urlPatterns = "/restaurantControl")
+@WebServlet(urlPatterns = "/restaurant")
 public class RestuarantServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
@@ -27,35 +27,41 @@ public class RestuarantServlet extends HttpServlet {
 			throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		String action = StringUtils.defaultIfEmpty(request.getParameter("action"), "bill");
+
 		String view = "";
 		switch (action) {
 		case "bill":
 			view = bill(request, response);
+			break;
+		case "addBill":
+//			view = addBill(request, response);
 			break;
 		case "bills":
 			view = bills(request, response);
 			break;
 		}
 
-		if (StringUtils.isNotEmpty(view)) {
+		if (view.startsWith("redirect:")) {
+//			response.sendRedirect(view.substring(REDIRECT_LENGTH));
+		} else {
 			getServletContext().getRequestDispatcher(view).forward(request, response);
 		}
 	}
 
 	public String bill(HttpServletRequest request, HttpServletResponse response) {
+		List<Menu> menuList = rs.getMenu();
 		boolean hasBill = Boolean.parseBoolean(StringUtils.defaultIfEmpty(request.getParameter("hasBill"), "false"));
 		List<Coupon> couponList = rs.getCoupon();
 		List<Card> cardList = rs.getCard();
-		List<Menu> menuList = rs.getMenu();
 
+		request.setAttribute("menuList", menuList);
 		request.setAttribute("hasBill", hasBill);
 		request.setAttribute("couponList", couponList);
 		request.setAttribute("cardList", cardList);
-		request.setAttribute("menuList", menuList);
 
 		return "/restaurant/bill.jsp";
 	}
-	
+
 	public String bills(HttpServletRequest request, HttpServletResponse response) {
 		boolean hasBill = Boolean.parseBoolean(StringUtils.defaultIfEmpty(request.getParameter("hasBill"), "false"));
 		List<Coupon> couponList = rs.getCoupon();
@@ -63,14 +69,14 @@ public class RestuarantServlet extends HttpServlet {
 		List<Menu> menuList = rs.getMenu();
 		List<Object[]> billList = rs.getBill();
 		List<Object[]> lineItemList = rs.getLineItem();
-		
+
 		request.setAttribute("hasBill", hasBill);
 		request.setAttribute("couponList", couponList);
 		request.setAttribute("cardList", cardList);
 		request.setAttribute("menuList", menuList);
 		request.setAttribute("billList", billList);
 		request.setAttribute("lineItemList", lineItemList);
-		
+
 		return "/restaurant/bills.jsp";
 	}
 //	

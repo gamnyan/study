@@ -1,6 +1,6 @@
-export async function getCustomers() {
+/*export async function getCustomers() {
   //let response = await fetch('http://localhost:8080/p0726/madang?action=apiCustomers');
-  let response = await fetch('http://localhost:8080/p0726/apimadang/customers');
+  let response = await fetch('http://localhost:8080/jwbook2/apimadang/customers');
   let json = await response.json();
 
   return json;
@@ -78,3 +78,4 @@ export async function setCustomer(customer) {
 
   return response.ok;
 }
+*/

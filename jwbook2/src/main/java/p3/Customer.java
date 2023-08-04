@@ -7,7 +7,7 @@ CREATE TABLE customer(
 )
 */
 
-package p;
+package p3;
 
 import java.util.List;
 

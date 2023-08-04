@@ -25,14 +25,13 @@ if (canRide(child)) {
 	canRide = "탑승 불가능";
 }
 %>
-<h1>롤러코스터</h1>
 <%=canRide%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>롤러코스터</title>
 </head>
 <body>
 

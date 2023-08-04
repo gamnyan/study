@@ -1,5 +1,6 @@
 package restaurant;
 
+@SuppressWarnings("serial")
 public class HasbillException extends Exception {
 	public HasbillException() {
 	}

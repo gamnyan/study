@@ -1,13 +1,13 @@
-package p;
+package p2;
 
 import java.util.List;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
-import javax.ws.rs.core.MediaType;
+//import javax.ws.rs.GET;
+//import javax.ws.rs.Path;
+//import javax.ws.rs.Produces;
+//import javax.ws.rs.core.MediaType;
 
-@Path("/customers")
+//@Path("/customers")
 public class CustomerService {
 	CustomerDAO customerDao;
 	OrderingService orderingService;
@@ -17,8 +17,8 @@ public class CustomerService {
 		orderingService = new OrderingService();
 	}
 
-	@GET
-	@Produces(MediaType.APPLICATION_JSON)
+//	@GET
+//	@Produces(MediaType.APPLICATION_JSON)
 	public List<Customer> get() {
 		return customerDao.select();
 	}

@@ -3,7 +3,7 @@
  * VARCHAR(64), price INT NOT NULL )
  */
 
-package p;
+package p3;
 
 import java.util.List;
 

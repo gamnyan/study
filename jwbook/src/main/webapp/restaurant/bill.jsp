@@ -6,15 +6,13 @@
 <html>
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport"
-	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta name="metro4:locale" content="ko-KR" />
 <meta name="metro4:init" content="false" />
 
 <title>Restaurant Metro</title>
 
-<link rel="stylesheet"
-	href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css" />
+<link rel="stylesheet" href="https://cdn.korzh.com/metroui/v4.5.1/css/metro-all.min.css" />
 <style></style>
 </head>
 
@@ -33,20 +31,18 @@
 	<div class="container">
 		<h6>메뉴</h6>
 		<c:forEach var="menu" items="${menuList}">
-			<button class="button menu" data-menu-id="${menu.id}"
-				data-menu-name="${menu.name}" data-menu-price="${menu.price}">${menu.name}(${menu.price}원)
+			<button class="button menu" data-menu-id="${menu.id}" data-menu-name="${menu.name}" data-menu-price="${menu.price}">
+				${menu.name}(${menu.price}원)
 			</button>
 		</c:forEach>
 	</div>
 	<br />
 	<div class="container">
 		<h6>선택한 메뉴</h6>
-		<form action="/jwbook/restaurant?action=addBill" method="post"
-			id="form_bill">
-			<input type="hidden" name="cardId" value="-1" id="card_id" /> <input
-				type="hidden" name="couponId" value="-1" id="coupon_id" />
-			<table class="table" data-role="table" data-show-search="false"
-				data-show-rows-steps="false" data-show-table-info="false">
+		<form action="/jwbook/restaurant?action=addBill" method="post" id="form_bill">
+			<input type="hidden" name="cardId" value="-1" id="card_id" />
+			<input type="hidden" name="couponId" value="-1" id="coupon_id" />
+			<table class="table" data-role="table" data-show-search="false" data-show-rows-steps="false" data-show-table-info="false">
 				<thead>
 					<tr>
 						<th>메뉴명</th>

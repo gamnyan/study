@@ -16,14 +16,13 @@ if (canRide(child)) {
 	canRide = "탑승 불가능";
 }
 %>
-<h1>회전목마</h1>
 <%=canRide%>
 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>회전목마</title>
 </head>
 <body>
 
