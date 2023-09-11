@@ -32,14 +32,6 @@ public class MadangService {
 		return rtn;
 	}
 	
-	public void addOrSetBook(Book book) {
-		if(book.getId() == -1) {
-			addBook(book);
-		}else {
-			setBook(book);
-		}
-	}
-	
 	public void addBook(Book book) {
 		dao.insertBook(book);
 	}
@@ -48,13 +40,21 @@ public class MadangService {
 		dao.updateBook(book);
 	}
 	
+	public void addOrSetBook(Book book) {
+		if(book.getId() == -1) {
+			addBook(book);
+		}else {
+			setBook(book);
+		}
+	}
+	
 	public void removeBook(int id) throws HasOrderingException {
 		boolean hasOrdering = hasOrderingCustomer(id);
 		
 		if(hasOrdering) {
 			throw new HasOrderingException("Book has ordering");
 		} else {
-			dao.deleteCustomer(id);
+			dao.deleteBook(id);
 		}		
 	}
 
